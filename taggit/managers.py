@@ -68,9 +68,10 @@ class ExtraJoinRestriction(object):
 
 
 class TaggableManager(RelatedField, Field):
+    attname=Field
     def __init__(self, verbose_name=_("Tags"),
         help_text=_("A comma-separated list of tags."), through=None, blank=False):
-        Field.__init__(self, verbose_name=verbose_name, help_text=help_text, blank=blank, serialize=False)
+        Field.__init__(self, verbose_name=verbose_name, help_text=help_text, blank=blank)
         self.through = through or TaggedItem
         self.rel = TaggableRel(self)
 
