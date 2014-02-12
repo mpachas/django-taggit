@@ -5,10 +5,11 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.generic import GenericForeignKey
 from django.db import models, IntegrityError, transaction
 from django.db.models.query import QuerySet
-from django.template.defaultfilters import slugify as default_slugify
+#from django.template.defaultfilters import slugify as default_slugify
 from django.utils.translation import ugettext_lazy as _, ugettext
 from django.utils.encoding import python_2_unicode_compatible
 
+from uuslug import slugify as default_slugify
 
 @python_2_unicode_compatible
 class TagBase(models.Model):
